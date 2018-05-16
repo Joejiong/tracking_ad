@@ -63,7 +63,7 @@ this repo implement my recent kaggle ct with simple lightgbm model and memory tr
 
 t0 = time.time()
 ###################################################################
-params = {
+* params = {
     'boosting_type': 'gbdt',
     'objective': 'binary',
     'learning_rate': 0.03,
@@ -94,9 +94,9 @@ model = lightgbm.train(
     verbose_eval=1,
     # init_model='model_v2.txt'
 )
-####################################################################
-t1 = time.time()
-t_min = np.round((t1-t0) / 60, 2)
+
+* t1 = time.time()
+* t_min = np.round((t1-t0) / 60, 2)
 print('It took {} mins to train model'.format(t_min))
 # save model
 # model.save_model('model_v2.txt')
