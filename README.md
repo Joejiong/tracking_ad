@@ -3,16 +3,16 @@ REDAME SIMPLE LIGHTGBM
 this repo implement my recent kaggle ct with simple lightgbm model and memory trick 
 
 # memory status
-process = psutil.Process(os.getpid())
-memused = process.memory_info().rss
-print('Total memory in use before reading data: {:.02f} GB '
+*process = psutil.Process(os.getpid())
+*memused = process.memory_info().rss
+*print('Total memory in use before reading data: {:.02f} GB '
       ''.format(memused / (2 ** 30)))
 
 # read data
-df_train = pd.read_hdf('../data/train_v2.hdf')
+*df_train = pd.read_hdf('../data/train_v2.hdf')
 # col
-target = 'is_attributed'
-features = [
+*target = 'is_attributed'
+*features = [
     'app',
     'device',
     'os',
@@ -37,7 +37,7 @@ features = [
     'ip_day_test_hh_clicks',
 ]
 # categorical
-categorical_features = [
+*categorical_features = [
     'app',
     'device',
     'os',
@@ -46,19 +46,19 @@ categorical_features = [
     'in_test_hh',
 ]
 # prep data
-dtrain = lightgbm.Dataset(
+*dtrain = lightgbm.Dataset(
     df_train[features].values,
     label=df_train[target].values,
     feature_name=features,
     categorical_feature=categorical_features,
     free_raw_data=False,
 )
-del df_train
-gc.collect()
-print('done data prep!!!')
+*del df_train
+*gc.collect()
+*print('done data prep!!!')
 # memory status
-memused = process.memory_info().rss
-print('Total memory in use after reading data: {:.02f} GB '
+*memused = process.memory_info().rss
+*print('Total memory in use after reading data: {:.02f} GB '
       ''.format(memused / (2 ** 30)))
 
 t0 = time.time()
