@@ -1,11 +1,6 @@
+REDAME SIMPLE LIGHTGBM
 # tracking_ad
-import os
-import psutil
-import time
-import gc
-import numpy as np
-import pandas as pd
-import lightgbm
+this repo implement my recent kaggle ct with simple lightgbm model and memory trick 
 
 # memory status
 process = psutil.Process(os.getpid())
