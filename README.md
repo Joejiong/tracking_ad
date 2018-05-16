@@ -3,16 +3,16 @@ REDAME SIMPLE LIGHTGBM
 this repo implement my recent kaggle ct with simple lightgbm model and memory trick 
 
 # memory status
-*process = psutil.Process(os.getpid())
-*memused = process.memory_info().rss
-*print('Total memory in use before reading data: {:.02f} GB '
+* process = psutil.Process(os.getpid())
+* memused = process.memory_info().rss
+* print('Total memory in use before reading data: {:.02f} GB '
       ''.format(memused / (2 ** 30)))
 
 # read data
-*df_train = pd.read_hdf('../data/train_v2.hdf')
+* df_train = pd.read_hdf('../data/train_v2.hdf')
 # col
-*target = 'is_attributed'
-*features = [
+* target = 'is_attributed'
+* features = [
     'app',
     'device',
     'os',
