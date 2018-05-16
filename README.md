@@ -37,7 +37,7 @@ this repo implement my recent kaggle ct with simple lightgbm model and memory tr
     'ip_day_test_hh_clicks',
 ]
 # categorical
-*categorical_features = [
+* categorical_features = [
     'app',
     'device',
     'os',
@@ -46,19 +46,19 @@ this repo implement my recent kaggle ct with simple lightgbm model and memory tr
     'in_test_hh',
 ]
 # prep data
-*dtrain = lightgbm.Dataset(
+* dtrain = lightgbm.Dataset(
     df_train[features].values,
     label=df_train[target].values,
     feature_name=features,
     categorical_feature=categorical_features,
     free_raw_data=False,
 )
-*del df_train
-*gc.collect()
-*print('done data prep!!!')
+* del df_train
+* gc.collect()
+* print('done data prep!!!')
 # memory status
-*memused = process.memory_info().rss
-*print('Total memory in use after reading data: {:.02f} GB '
+* memused = process.memory_info().rss
+* print('Total memory in use after reading data: {:.02f} GB '
       ''.format(memused / (2 ** 30)))
 
 t0 = time.time()
